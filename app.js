@@ -32,7 +32,7 @@ app.set('view engine', 'ejs');
 connectDB();
 
 //routes
-app.use('/', require('./routes/guest.route'));
+app.use('/',require('./routes/guest.route'));
 app.use('/', requireAuth,checkCurrentUser, require('./routes/auth.route'));
 
 app.listen(PORT, () => {

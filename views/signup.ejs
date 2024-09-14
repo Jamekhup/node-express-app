@@ -1,23 +1,28 @@
-<div>
+<div class="flex justify-center items-center lg:w-[40%] md:w-[55%] md:w=[85%] w=[98%] mx-auto my-10">
 
-    <form class="form">
+    <form class="form w-full bg-white px-3 py-4 rounded-sm shadow-sm flex flex-col justify-start gap-y-4 box-border">
+
+        <h1 class="text-center text-xl font-semibold">Signup Form</h1>
         
         <div>
-            <input type="text" placeholder="Enter Your Name" name="name">
-            <span class="error name"></span>
+            <input type="text" placeholder="Enter Your Name" name="name" 
+            class="w-full border border-gray-400 px-2.5 py-1.5 rounded-sm outline-none">
+            <span class="error name text-sm text-red-500"></span>
         </div>
 
         <div>
-            <input type="email" placeholder="Email Address" name="email">
-            <span class="error email"></span>
+            <input type="email" placeholder="Email Address" name="email"
+            class="w-full border border-gray-400 px-2.5 py-1.5 rounded-sm outline-none">
+            <span class="error email text-sm text-red-500"></span>
         </div>
 
         <div>
-            <input type="password" placeholder="Password" name="password">
-            <span class="error password"></span>
+            <input type="password" placeholder="Password" name="password"
+            class="w-full border border-gray-400 px-2.5 py-1.5 rounded-sm outline-none">
+            <span class="error password text-sm text-red-500"></span>
         </div>
 
-        <button type="submit">Signup</button>
+        <button type="submit" class="bg-gray-700 text-slate-100 w-fit px-4 py-1.5 rounded-md">Signup</button>
         
     </form>
 

@@ -1,12 +1,10 @@
-const adminLayout = '../views/layouts/auth';
-const jwt = require('jsonwebtoken');
 
 const postController = (req, res) => {
     const locals = {
-        title: 'Dashboard',
-        description: 'Welcome to the admin dashboard!'
+        title: 'posts',
+        description: 'blog post lists!'
     }
-    res.render('admin/dashboard',{locals, layout: adminLayout});
+    res.render('post',{locals});
 }
 
 

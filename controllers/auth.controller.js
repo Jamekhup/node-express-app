@@ -12,7 +12,7 @@ const handleErrors = (err) => {
     }
 
     if(err.message == 'Incorrect password'){
-        errors.password = err.password; 
+        errors.password = err.message; 
     }
 
     if(err.message.includes('user validation failed')) {
