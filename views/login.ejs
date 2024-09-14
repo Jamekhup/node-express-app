@@ -1,0 +1,49 @@
+<div>
+
+    <form class="form">
+        
+        <div>
+            <input type="email" placeholder="Email Address" name="email">
+            <span class="email error"></span>
+        </div>
+
+        <div>
+            <input type="password" placeholder="Password" name="password">
+            <span class="password error"></span>
+        </div>
+
+        <button type="submit">Signup</button>
+        
+    </form>
+
+</div>
+
+<script>
+    let emailError = document.querySelector('.email.error');
+    let passwordError = document.querySelector('.password.error');
+
+    const form = document.querySelector('.form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        let email = form.email.value;
+        let password = form.password.value; 
+
+        emailError.textContent = '';
+        passwordError.textContent = '';
+
+        const res = await fetch('/login',{
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({email, password})
+        });
+        const data = await res.json();
+        if(data.errors){
+            emailError.textContent = data.errors.email;
+            passwordError.textContent = data.errors.password;
+        }
+
+        if(data.user){
+            location.assign('/');
+        }
+    });
+</script>
